@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import CrudContext from "../../context/CrudContext";
 
-const CrudTableRow = ({ el, setdataToEdit, deleteData }) => {
+const CrudTableRow = ({ el }) => {
   let { name, constellation, id } = el;
+  const { setdataToEdit, deleteData } = useContext(CrudContext);
 
   return (
     <tr>

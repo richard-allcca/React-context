@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import CrudContext from "../../context/CrudContext";
 
 const initialForm = {
   // datos iniciales de los input
@@ -7,8 +8,10 @@ const initialForm = {
   id: null,
 };
 
-const CrudForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
+const CrudForm = () => {
   const [form, setForm] = useState(initialForm);
+  const { dataToEdit, setdataToEdit, createData, updateData } =
+    useContext(CrudContext);
 
   useEffect(() => {
     if (dataToEdit) {
@@ -37,7 +40,6 @@ const CrudForm = ({ createData, updateData, dataToEdit, setdataToEdit }) => {
       alert("Datos imcompletos");
       return;
     }
-
     if (form.id === null) {
       //valida id para crear o actualizar
       createData(form);

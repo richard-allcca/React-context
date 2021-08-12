@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from "react";
-
-import CrudForm from "../components/CrudForm";
-import CrudTable from "../components/CrudTable";
+import { createContext, useEffect, useState } from "react";
 import { helperHttp } from "../helpers/helperHttp";
-import Loader from "./Loader";
-import Message from "./Message";
 
-export const CrudApi = () => {
+const CrudContext = createContext();
+
+const CrudProvider = ({ children }) => {
   const [db, setDb] = useState(null);
   const [dataToEdit, setdataToEdit] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  let api = helperHttp(); //comentado para evitar el warning de []
+  let api = helperHttp();
   let url = "http://localhost:5000/santos";
 
   useEffect(() => {
@@ -102,34 +99,19 @@ export const CrudApi = () => {
     }
   };
 
-  // =================================================================
-  return (
-    <>
-      <h2> CRUD API</h2>
-      <article className="grid-1-2">
-        <CrudForm
-          createData={createData}
-          updateData={updateData}
-          dataToEdit={dataToEdit}
-          setdataToEdit={setdataToEdit}
-        />
-        {loading && <Loader />}
-        {error && (
-          <Message
-            bgColor="#dc3545"
-            msg={`Error ${error.status}: ${error.statusText} `}
-          />
-        )}
-        {db && (
-          <CrudTable
-            data={db}
-            setdataToEdit={setdataToEdit}
-            deleteData={deleteData}
-          />
-        )}
-      </article>
-    </>
-  );
+  const data = {
+    db,
+    dataToEdit,
+    error,
+    loading,
+    createData,
+    updateData,
+    deleteData,
+    setdataToEdit,
+  };
+
+  return <CrudContext.Provider value={data}>{children}</CrudContext.Provider>;
 };
 
-export default CrudApi;
+export { CrudProvider };
+export default CrudContext;
