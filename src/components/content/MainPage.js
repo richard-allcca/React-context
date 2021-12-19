@@ -23,7 +23,7 @@ const translations = {
     headerTitle: "My application without Context API",
     headerSubtitle: "My header",
     headerLight: "Light",
-    headerDark: "Darl",
+    headerDark: "Dark",
     buttonLogin: "Login",
     buttonLogout: "Logout",
     mainWelcome: "Welcome Guest",
@@ -33,7 +33,7 @@ const translations = {
   },
 };
 
-const MyPage = () => {
+const MainPage = () => {
   const [theme, setTheme] = useState(initialTheme);
   const [language, setLanguage] = useState(initialLanguage);
   const [text, setText] = useState(translations[language]);
@@ -48,7 +48,7 @@ const MyPage = () => {
   };
 
   const handleLanguage = (e) => {
-    // console.log(e.target);
+    // puedes usar "switch" en caso sean pas opciones
     if (e.target.value === "es") {
       setLanguage("es");
       setText(translations.es);
@@ -82,4 +82,4 @@ const MyPage = () => {
   );
 };
 
-export default MyPage;
+export default MainPage;

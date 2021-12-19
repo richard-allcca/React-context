@@ -13,6 +13,7 @@ const HeaderContext = () => {
       <h2>{text.headerTitle}</h2>
       <h3>{text.headerSubtitle}</h3>
       <select name="lenguaje" onChange={handleLanguage}>
+        <option>Idioma</option>
         <option value="es">ES</option>
         <option value="en">EN</option>
       </select>
@@ -40,3 +41,7 @@ const HeaderContext = () => {
 };
 
 export default HeaderContext;
+
+// Notas:
+// useContext: reemplaza "useState" para consumir los providers 
+// ThemeContext: valor inicial de los "useContext" 

@@ -17,3 +17,12 @@ body {
   background-color: hsl(0, 0%, 80%);
   filter: invert(1);
 }
+
+.grid-1-2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.table-content{
+  justify-self: center;
+}

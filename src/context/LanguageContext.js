@@ -20,7 +20,7 @@ const translations = {
     headerTitle: "My application with Context API",
     headerSubtitle: "My header",
     headerLight: "Light",
-    headerDark: "Darl",
+    headerDark: "Dark",
     buttonLogin: "Login",
     buttonLogout: "Logout",
     mainWelcome: "Welcome Guest",

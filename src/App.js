@@ -1,8 +1,7 @@
 import "./App.css";
-
-import MyPage from "./components/content/MyPage";
-import MyPageContext from "./components/context_component/MyPageContext";
-import CrudApi from "./components/crud_helpers/CrudApi";
+import MainPage from "./components/content/MainPage";
+import MainPageContext from "./components/context_component/MainPageContext";
+import CrudApi from "./components/crud_components/CrudApi";
 import { CrudProvider } from "./context/CrudContext";
 
 function App() {
@@ -21,9 +20,9 @@ function App() {
         <CrudApi />
       </CrudProvider>
       <hr />
-      <MyPageContext />
+      <MainPageContext />
       <hr />
-      <MyPage />
+      <MainPage />
     </div>
   );
 }

@@ -15,3 +15,7 @@ const FooterContext = () => {
 };
 
 export default FooterContext;
+
+// Notas:
+// useContext: reemplaza "useState" para consumir los providers
+// ThemeContext: valor inicial de los "useContext"

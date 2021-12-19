@@ -11,6 +11,7 @@ const Header = ({
       <h2>{text.headerTitle}</h2>
       <h3>{text.headerSubtitle}</h3>
       <select name="lenguaje" onChange={handleLanguage}>
+        <option>Idioma</option>
         <option value="es">ES</option>
         <option value="en">EN</option>
       </select>

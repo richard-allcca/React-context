@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import CrudContext from "../../context/CrudContext";
-
-import CrudForm from "../crud_components/CrudForm";
-import CrudTable from "../crud_components/CrudTable";
-import Loader from "./Loader";
-import Message from "./Message";
+import Loader from "./../crud_helpers/Loader";
+import Message from "./../crud_helpers/Message";
+import CrudForm from "./CrudForm";
+import CrudTable from "./CrudTable";
 
 export const CrudApi = () => {
   const { db, loading, error } = useContext(CrudContext); //! fixme
@@ -27,3 +26,7 @@ export const CrudApi = () => {
 };
 
 export default CrudApi;
+
+// Notas.
+// CrudProvider: lo usamos el el "app.js" para poder usar el contexto aqui
+// useContext: no puede estar en el mismo archivo que el "provider"

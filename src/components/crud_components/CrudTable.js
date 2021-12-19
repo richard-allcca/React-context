@@ -5,7 +5,7 @@ import CrudTableRow from "./CrudTableRow";
 const CrudTable = () => {
   const { db: data } = useContext(CrudContext);
   return (
-    <div>
+    <div className="table-content">
       <h3>Tabla de Datos</h3>
       <table>
         <thead>
