@@ -6,7 +6,7 @@ import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
 
 export const CrudApi = () => {
-  const { db, loading, error } = useContext(CrudContext); //! fixme
+  const { db, loading, error } = useContext(CrudContext);
   return (
     <div>
       <h2> CRUD API con Context</h2>
@@ -29,4 +29,5 @@ export default CrudApi;
 
 // Notas.
 // CrudProvider: lo usamos el el "app.js" para poder usar el contexto aqui
-// useContext: no puede estar en el mismo archivo que el "provider"
+// useContext: no puede ser usado en el mismo archivo que donde usamos <Name.Provider></Name.Provider>
+// Solucion: user el <Name.Provider></Name.Provider> como envoltura del componente o archivo que usa el context

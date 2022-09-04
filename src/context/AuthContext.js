@@ -20,5 +20,7 @@ const AuthProvider = ({ children }) => {
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };
 
+// para encapsular el contexto en un componente
 export { AuthProvider };
+// para usar el contexto en un componente
 export default AuthContext;
