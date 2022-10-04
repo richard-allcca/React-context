@@ -7,19 +7,19 @@ import HeaderContext from "./HeaderContext";
 import MainContext from "./MainContext";
 
 const MainPageContext = () => {
-  return (
-    <div className="my-page">
-      <ThemeProvider>
-        <LanguageProvider>
-          <AuthProvider>
-            <HeaderContext />
-            <MainContext />
-            <FooterContext />
-          </AuthProvider>
-        </LanguageProvider>
-      </ThemeProvider>
-    </div>
-  );
+   return (
+      <div className="my-page">
+         <ThemeProvider>
+            <LanguageProvider>
+               <AuthProvider>
+                  <HeaderContext />
+                  <MainContext />
+                  <FooterContext />
+               </AuthProvider>
+            </LanguageProvider>
+         </ThemeProvider>
+      </div>
+   );
 };
 
 export default MainPageContext;
