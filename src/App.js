@@ -5,26 +5,26 @@ import MainPage from "./components/normal-components/MainPage";
 import { CrudProvider } from "./context/CrudContext";
 
 function App() {
-   return (
-      <div className="App">
-         <h1>React Context API</h1>
-         <a
-            href="https://es.reactjs.org/docs/context.html"
-            target="_blank"
-            rel="noopener noreferrer"
-         >
-            Documentación
-         </a>
-         <hr />
-         <CrudProvider>
-            <CrudApi />
-         </CrudProvider>
-         <hr />
-         <MainPageContext />
-         <hr />
-         <MainPage />
-      </div>
-   );
+	return (
+		<div className="App">
+			<h1>React Context API</h1>
+			<a
+				href="https://es.reactjs.org/docs/context.html"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Documentación
+			</a>
+			<hr />
+			<MainPage />
+			<hr />
+			<MainPageContext />
+			<hr />
+			<CrudProvider>
+				<CrudApi />
+			</CrudProvider>
+		</div>
+	);
 }
 
 export default App;
